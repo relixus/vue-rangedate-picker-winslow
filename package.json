@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Date picker with range selection",
   "author": "gw.winslow <winslow@winslow.io>",
-  "main": "dist/vue-rangedate-picker.js",
-  "module": "dist/vue-rangedate-picker.js",
-  "browser": "dist/vue-rangedate-picker.js",
-  "unpkg": "dist/vue-rangedate-picker.js",
-  "style": "dist/vue-rangedate-picker.css",
+  "main": "dist/vue-rangedate-picker-winslow.js",
+  "module": "dist/vue-rangedate-picker-winslow.js",
+  "browser": "dist/vue-rangedate-picker-winslow.js",
+  "unpkg": "dist/vue-rangedate-picker-winslow.js",
+  "style": "dist/vue-rangedate-picker-winslow.css",
   "scripts": {
     "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
     "dev": "cross-env BABEL_ENV=test webpack-dev-server --inline --hot --open --content-base ./test/unit/ --config config/webpack.dev.conf.js",
@@ -71,17 +71,17 @@
     "webpack-merge": "^4.1.1"
   },
   "files": [
-    "dist/vue-rangedate-picker.js",
-    "dist/vue-rangedate-picker.min.js"
+    "dist/vue-rangedate-picker-winslow.js",
+    "dist/vue-rangedate-picker-winslow.min.js"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gwindes/vue-rangedate-picker.git"
+    "url": "git+https://github.com/gwindes/vue-rangedate-picker-winslow.git"
   },
   "bugs": {
-    "url": "https://github.com/gwindes/vue-rangedate-picker/issues"
+    "url": "https://github.com/gwindes/vue-rangedate-picker-winslow/issues"
   },
-  "homepage": "https://github.com/gwindes/vue-rangedate-picker#readme",
+  "homepage": "https://github.com/gwindes/vue-rangedate-picker-winslow#readme",
   "license": "MIT",
   "keywords": [
     "plugin",
