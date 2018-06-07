@@ -1,6 +1,6 @@
 {
   "name": "vue-rangedate-picker-winslow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Date picker with range selection",
   "author": "gw.winslow <winslow@winslow.io>",
   "main": "dist/vue-rangedate-picker-winslow.js",
