@@ -4,7 +4,7 @@
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/) 
 
 
-> Date picker with range selection
+> Vue Date picker with range selection
 
 ## Demo
 
@@ -72,6 +72,8 @@ You can pass these below props to `<vue-rangedate-picker :props="props"></vue-ra
 
   *Default Value* : `'EN'`
 
+  *Component Example* : `<vue-rangedate-picker i18n="ID" />`
+
 + **months**
 
   *Description* : Array of months name
@@ -83,6 +85,8 @@ You can pass these below props to `<vue-rangedate-picker :props="props"></vue-ra
   EN: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   ID: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
   ```
+
+  *Component Example* : `<vue-rangedate-picker :months="['Enero', 'Febrero', 'Marzo', ...]" />`
 
 + **shortDays**
 
@@ -118,6 +122,8 @@ You can pass these below props to `<vue-rangedate-picker :props="props"></vue-ra
 
   *Default Value* : `'DD MMM YYYY'`
 
+  *Component Example* : `<vue-rangedate-picker months="YYYY-MM-DD" />`
+
 + **styles**
 
   *Description* : -
@@ -150,6 +156,19 @@ You can pass these below props to `<vue-rangedate-picker :props="props"></vue-ra
   {
     start: new Date(this.initRange.start),
     end: new Date(this.initRange.end)
+  }
+  ```
+
+
+  *Component Example* : `<vue-rangedate-picker :initRange="initialRange" />`
+  ```
+  // initial 7 day range
+  const n = new Date();
+  const start = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 5);
+  const end = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1);
+  {
+    start: start,
+    end: end
   }
   ```
 
