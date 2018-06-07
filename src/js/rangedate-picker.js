@@ -19,7 +19,7 @@ const presetRangeLabel = {
     today: 'Today',
     thisMonth: 'This Month',
     lastMonth: 'Last Month',
-    lastSevenSays: 'Last 7 Days',
+    lastSevenDays: 'Last 7 Days',
     lastThirtyDays: 'Last 30 Days'
   },
   ID: {
@@ -87,10 +87,11 @@ const defaultPresets = function (i18n = defaultI18n) {
           end: endMonth
         }
       }
-    },
-    last7days: function () {
+    }
+    /* last7days: function () {
+      // todo: fix how last N days is calculated since this is wrong and doesn't calculate properly due to start/end of months add/subtracting dates doesn't change the current month
       const n = new Date()
-      const start = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 5)
+      const start = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 6)
       const end = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1)
       return {
         label: presetRangeLabel[i18n].lastSevenDays,
@@ -102,6 +103,7 @@ const defaultPresets = function (i18n = defaultI18n) {
       }
     },
     last30days: function () {
+      // todo: fix how last N days is calculated since this is wrong and doesn't calculate properly due to start/end of months add/subtracting dates doesn't change the current month
       const n = new Date()
       const start = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 29)
       const end = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1)
@@ -113,7 +115,7 @@ const defaultPresets = function (i18n = defaultI18n) {
           end: end
         }
       }
-    }
+    } */
   }
 }
 
