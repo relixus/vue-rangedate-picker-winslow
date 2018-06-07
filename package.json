@@ -71,8 +71,8 @@
     "webpack-merge": "^4.1.1"
   },
   "files": [
-    "dist/vue-rangedate-picker-winslow.js",
-    "dist/vue-rangedate-picker-winslow.min.js"
+    "dist/vue-rangedate-picker.js",
+    "dist/vue-rangedate-picker.min.js"
   ],
   "repository": {
     "type": "git",
