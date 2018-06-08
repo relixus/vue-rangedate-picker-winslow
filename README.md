@@ -32,10 +32,10 @@ Vue.use(VueRangedatePicker)
 ```html
 <!-- Include after Vue -->
 <!-- Local files -->
-<script src="vue-rangedate-picker/dist/vue-rangedate-picker-winslow.min.js"></script>
+<script src="vue-rangedate-picker-winslow/dist/vue-rangedate-picker.min.js"></script>
 
 <!-- From CDN -->
-<script src="https://unpkg.com/vue-rangedate-picker"></script>
+<script src="https://unpkg.com/vue-rangedate-picker-winslow"></script>
 ```
 
 ### Available Events
@@ -47,8 +47,8 @@ You can catch these below Events to `<vue-rangedate-picker @events="events"></vu
   *Description* : function that will `$emit` when datepicker set value, this function will get parameter response :
   ```javascript
   {
-    start: dateObjectStart
-    end: dateObjectEnd
+    start: new Date(2018, 05, 01)
+    end: new Date(2018, 05, 31)
   }
   ```
 
