@@ -6,12 +6,18 @@ const availableMonths = {
   EN: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November',
     'December'],
   ID: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November',
-    'Desember']
+    'Desember'],
+  FR: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre',
+    'Décembre'],
+  NL: ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November',
+    'December']
 }
 
 const availableShortDays = {
   EN: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-  ID: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab']
+  ID: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+  FR: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+  NL: ['Zon', 'Maa', 'Din', 'Woe', 'Don', 'Vri', 'Zat']
 }
 
 const presetRangeLabel = {
@@ -28,6 +34,20 @@ const presetRangeLabel = {
     lastMonth: 'Bulan lalu',
     lastSevenDays: '7 Hari Terakhir',
     lastThirtyDays: '30 Hari Terakhir'
+  },
+  FR: {
+    today: "Aujourd'hui",
+    thisMonth: 'Ce Mois',
+    lastMonth: 'Mois Dernier',
+    lastSevenDays: '7 Derniers Jours',
+    lastThirtyDays: '30 Derniers Jours'
+  },
+  NL: {
+    today: 'Vandaag',
+    thisMonth: 'Deze Maand',
+    lastMonth: 'Afgelopen Maand',
+    lastSevenDays: 'Laatste 7 Dagen',
+    lastThirtyDays: 'Laatste 30 Dagen'
   }
 }
 
