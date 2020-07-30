@@ -17,7 +17,7 @@
     "test:cover": "cross-env BABEL_ENV=test karma start config/karma.cover.conf.js",
     "test:cover-upload": "npm run test:cover && codecov",
     "test:unit": "cross-env BABEL_ENV=test karma start config/karma.unit.conf.js",
-    "build": "rm -rf dist/*.js* && webpack --config config/webpack.prod.conf.js"
+    "build": "rd /s /q dist && webpack --config config/webpack.prod.conf.js"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -96,6 +96,7 @@
     "node": ">= 6.0"
   },
   "dependencies": {
-    "fecha": "^2.3.2"
+    "fecha": "^2.3.2",
+    "moment": "^2.27.0"
   }
 }

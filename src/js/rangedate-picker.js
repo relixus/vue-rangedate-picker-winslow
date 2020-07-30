@@ -1,5 +1,5 @@
 import fecha from 'fecha'
-
+const moment = require('moment');
 const defaultConfig = {}
 const defaultI18n = 'EN'
 const availableMonths = {
@@ -71,8 +71,8 @@ const defaultPresets = function (i18n = defaultI18n) {
   return {
     today: function () {
       const n = new Date()
-      const startToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1, 0, 0)
-      const endToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1, 23, 59)
+      let startToday = moment().toDate();
+      let endToday = moment().toDate();
       return {
         label: presetRangeLabel[i18n].today,
         active: false,
@@ -84,8 +84,8 @@ const defaultPresets = function (i18n = defaultI18n) {
     },
     thisMonth: function () {
       const n = new Date()
-      const startMonth = new Date(n.getFullYear(), n.getMonth(), 2)
-      const endMonth = new Date(n.getFullYear(), n.getMonth() + 1, 1)
+      let startMonth = moment().startOf("month").toDate();
+      let endMonth = moment().endOf("month").toDate();
       return {
         label: presetRangeLabel[i18n].thisMonth,
         active: false,
@@ -97,8 +97,8 @@ const defaultPresets = function (i18n = defaultI18n) {
     },
     lastMonth: function () {
       const n = new Date()
-      const startMonth = new Date(n.getFullYear(), n.getMonth() - 1, 2)
-      const endMonth = new Date(n.getFullYear(), n.getMonth(), 1)
+      let startMonth = moment().subtract(1, "month").startOf("month").toDate();
+      let endMonth = moment().subtract(1, "month").endOf("month").toDate();
       return {
         label: presetRangeLabel[i18n].lastMonth,
         active: false,
@@ -282,8 +282,10 @@ export default {
       if (!date) {
         return null
       }
-      const dateparse = new Date(Date.parse(date))
-      return fecha.format(new Date(dateparse.getFullYear(), dateparse.getMonth(), dateparse.getDate() - 1), format)
+      const dateparse = new Date(Date.parse(date));
+      console.log('dateparse',dateparse, date);
+      
+      return moment(date).format('MMM/DD/YYYY');
     },
     getDayIndexInMonth: function (r, i, startMonthDay) {
       const date = (this.numOfDays * (r - 1)) + i
@@ -314,7 +316,7 @@ export default {
       return newData
     },
     selectFirstItem (r, i) {
-      const result = this.getDayIndexInMonth(r, i, this.startMonthDay) + 1
+      const result = this.getDayIndexInMonth(r, i, this.startMonthDay)
       this.dateRange = Object.assign({}, this.dateRange, this.getNewDateRange(result, this.activeMonthStart,
       this.activeYearStart))
       if (this.dateRange.start && this.dateRange.end) {
@@ -325,7 +327,7 @@ export default {
       }
     },
     selectSecondItem (r, i) {
-      const result = this.getDayIndexInMonth(r, i, this.startNextMonthDay) + 1
+      const result = this.getDayIndexInMonth(r, i, this.startNextMonthDay) 
       this.dateRange = Object.assign({}, this.dateRange, this.getNewDateRange(result, this.startNextActiveMonth,
       this.activeYearEnd))
       if (this.dateRange.start && this.dateRange.end) {
@@ -333,7 +335,7 @@ export default {
       }
     },
     isDateSelected (r, i, key, startMonthDay, endMonthDate) {
-      const result = this.getDayIndexInMonth(r, i, startMonthDay) + 1
+      const result = this.getDayIndexInMonth(r, i, startMonthDay);
       if (result < 2 || result > endMonthDate + 1) return false
 
       let currDate = null
@@ -346,7 +348,7 @@ export default {
         (this.dateRange.end && this.dateRange.end.getTime() === currDate.getTime())
     },
     isDateInRange (r, i, key, startMonthDay, endMonthDate) {
-      const result = this.getDayIndexInMonth(r, i, startMonthDay) + 1
+      const result = this.getDayIndexInMonth(r, i, startMonthDay) 
       if (result < 2 || result > endMonthDate + 1) return false
 
       let currDate = null
@@ -388,6 +390,9 @@ export default {
       if (!this.isCompact) {
         this.toggleCalendar()
       }
+    },
+    formatDateProper: function (date){
+      return moment(date).format('MMM DD YYYY');
     }
   }
 }
